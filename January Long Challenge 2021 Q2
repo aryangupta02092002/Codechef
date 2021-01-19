@@ -1,0 +1,39 @@
+//Division 3
+//Question 2
+//Encoded String(DECODEIT):
+
+#include <bits/stdc++.h>
+using namespace std;
+int base(int num)
+{
+    int tmp,b=1,val=0;
+    while(num>0)
+    {
+        tmp=num%10;
+        val+=tmp*b;
+        num/=10;
+        b*=2;
+    }
+    return val;
+}        
+int main() {
+	int t;
+	cin>>t;
+    string ch[16]={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"};
+	while(t--)
+	{
+	    int n,tmp;
+	    cin>>n;
+	    string str, ptr;
+	    cin>>str;
+	    for(int i=0;i<n;i+=4)
+	    {
+	        ptr=str.substr(i,4);
+	        tmp=stoi(ptr);
+	        int p=base(tmp);
+	        cout<<ch[p];
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
