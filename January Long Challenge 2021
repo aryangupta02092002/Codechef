@@ -1,0 +1,41 @@
+//Division 3 
+//Question-1
+//Chef and Division 3:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	long long int t;
+	long long int c=0;
+	cin>>t;
+	while(t--)
+	{
+	    long long int n,k,d,s;
+	    cin>>n>>k>>d;
+	    for(long long int i=1;i<=n;i++)
+	    {
+	        cin>>s;
+	        c=c+s;
+	    }
+	    if(c<k)
+	    {
+	        cout<<"0"<<endl;
+	    }
+	    else if(c>=k)
+	    {
+	        long long int b=c/k;
+	        if(b<d)
+	        {
+	            cout<<b<<endl;
+	        }
+	        if(b>=d)
+	        {
+	            cout<<d<<endl;
+	        }
+	    }
+	    c=0;
+	}
+	return 0;
+}
